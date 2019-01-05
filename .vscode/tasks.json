@@ -1,0 +1,30 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "SFML run",
+            "type": "shell",
+            "command": "${workspaceFolder}/sfml-app",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },            
+            "dependsOn": ["SFML linking"]
+        },
+        {
+            "label": "SFML linking",
+            "type": "shell",
+            "command": "g++ ${workspaceFolder}/main.o -o ${workspaceFolder}/sfml-app ${workspaceFolder}/classes/Game.cpp ${workspaceFolder}/classes/ImageManager.cpp ${workspaceFolder}/classes/GameClock.cpp ${workspaceFolder}/classes/Drawables.cpp ${workspaceFolder}/classes/Ball.cpp ${workspaceFolder}/classes/Square.cpp -lsfml-graphics -lsfml-window -lsfml-system",
+            "group": "build",
+            "dependsOn": ["SFML main compilation"]
+        },
+        {
+            "label": "SFML main compilation",
+            "type": "shell",
+            "command": "g++ -std=c++11 -Wall -Weffc++ -Wextra -Wsign-conversion -c ${workspaceFolder}/main.cpp",
+            "group": "build"
+        }
+    ]
+}
