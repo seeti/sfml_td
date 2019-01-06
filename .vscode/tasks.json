@@ -16,7 +16,7 @@
         {
             "label": "SFML linking",
             "type": "shell",
-            "command": "g++ ${workspaceFolder}/main.o -o ${workspaceFolder}/sfml-app ${workspaceFolder}/classes/Game.cpp ${workspaceFolder}/classes/ImageManager.cpp ${workspaceFolder}/classes/GameClock.cpp ${workspaceFolder}/classes/Drawables.cpp ${workspaceFolder}/classes/Ball.cpp ${workspaceFolder}/classes/Square.cpp -lsfml-graphics -lsfml-window -lsfml-system",
+            "command": "g++ ${workspaceFolder}/main.o -o ${workspaceFolder}/sfml-app ${workspaceFolder}/classes/Game.cpp ${workspaceFolder}/classes/ImageManager.cpp ${workspaceFolder}/classes/GameClock.cpp ${workspaceFolder}/classes/Drawables.cpp ${workspaceFolder}/classes/Ball.cpp ${workspaceFolder}/classes/Square.cpp ${workspaceFolder}/classes/Button.cpp -lsfml-graphics -lsfml-window -lsfml-system",
             "group": "build",
             "dependsOn": ["SFML main compilation"]
         },

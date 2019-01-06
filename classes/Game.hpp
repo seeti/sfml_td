@@ -24,7 +24,6 @@ class Game {
     
     private:
         void keyPressed(sf::Keyboard::Key);
-        void ballMovement(sf::Keyboard::Key);
         void update(float dt);
 
         sf::RenderWindow renderWindow;
