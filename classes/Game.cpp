@@ -1,11 +1,10 @@
 #include "Game.hpp"
 #include "GameClock.hpp"
-#include "Ball.hpp"
-#include "Square.hpp"
 #include "Button.hpp"
 
 GameClock *gameClock = nullptr;
 Button *boton = nullptr;
+Button *boton_square = nullptr;
 
 Game::Game()
 {
@@ -31,8 +30,13 @@ void Game::init(int width, int height, sf::String title)
 
     boton = new Button();
     boton->setPosition(200.f, 200.f);
+    boton->setScale(0.5f, 0.5f);
+
+    boton_square = new Button(Style::Square);
+    boton_square->setPosition(50.f, 50.f);
 
     drawables->addDrawable("boton1", boton);
+    drawables->addDrawable("boton2", boton_square);
 
     std::cout << "drawables count after: " << drawables->drawablesCount() << std::endl;
 }
@@ -75,6 +79,7 @@ void Game::update()
 void Game::update(float dt)
 {   
     boton->update(renderWindow);
+    boton_square->update(renderWindow);
 }
 
 void Game::render()
